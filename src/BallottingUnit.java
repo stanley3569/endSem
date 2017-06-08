@@ -1,10 +1,10 @@
 
 public class BallottingUnit {
-    private Candidate candidate1;
-    private Candidate candidate2;
-    private Candidate candidate3;
-    private Candidate candidate4;
-    private Candidate winner;
+    public Candidate candidate1;
+    public Candidate candidate2;
+    public Candidate candidate3;
+    public Candidate candidate4;
+    public Candidate winner;
     
     
     
@@ -32,12 +32,6 @@ public class BallottingUnit {
     }
     
     
-
-    public String reportResults()
-    {
-        findWinner();
-        return drawGraph();
-    }
 
 
     private void compareWinner(Candidate candidate)
@@ -68,24 +62,18 @@ public class BallottingUnit {
         compareWinner(candidate2);
         compareWinner(candidate3);
         compareWinner(candidate4);
+        System.out.println("Winner of the election is " + winner.name + " " + "with" + " "
+                + winner.votes + "\n" );
     }
 
     
     
 
 
-    private String drawGraph()
-
-    { 
-        return leader(winner.getName(), winner.getNumberOfVotes());
-    }
-
-    private String leader(String winnerName, int votes)
-    {   drawGraph();
-        return ("The winner of the ballot is" + winner.getName() + "with"
-            + winner.getNumberOfVotes() + "\n" + "Results graph");
-
-    }
+public void reportResults()
+{
+	findWinner();
+}
 
 
 
